@@ -44,8 +44,8 @@ public class MeuListener extends EnquantoBaseListener {
 		final Comando senao = (Comando) getValue(ctx.comando().get(ctx.comando().size()-1));
 		Se se = new Se(condicao, entao, senao);
 		if(ctx.bool().size() > 1){
-			System.out.println("iniciando add senaose");
 			for (int i = 1; i < ctx.bool().size(); i++){ 		// add opcoes senaose
+				System.out.println("add senaose");
 				se.AddSeNaoSe(new SeNaoSe( (Bool) getValue(ctx.bool(i)), 
 											(Comando) getValue(ctx.comando().get(i)) ) );
 			}
@@ -155,8 +155,9 @@ public class MeuListener extends EnquantoBaseListener {
 		final Expressao variavel = (Expressao) getValue(ctx.expressao().get(0));
 		final Comando padrao = (Comando) getValue(ctx.comando(ctx.comando().size()-1)); //ultimo comando passado
 		Escolha escolha = new Escolha(variavel, padrao);
-		for (int i = 0; i < ctx.expressao().size(); i++) 		// add opcoes
-			escolha.AddCaso(new Caso((Expressao) getValue(ctx.expressao().get(i+1)), (Comando) getValue(ctx.comando().get(i))));
+		for (int i = 1; i < ctx.expressao().size(); i++) 		// add opcoes
+			escolha.AddCaso(new Caso((Expressao) getValue(ctx.expressao().get(i)),
+									(Comando) getValue(ctx.comando().get(i-1))));
 		setValue(ctx, escolha);
 	}
 

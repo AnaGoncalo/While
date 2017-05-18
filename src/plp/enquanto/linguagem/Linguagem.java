@@ -150,17 +150,25 @@ public interface Linguagem {
 
 		@Override
 		public void execute() {
+			
+			//System.out.println(id);
+			
 			if(de.getValor() < ate.getValor()){
-				for(ambiente.put(id, de.getValor()); ambiente.get(id) < ate.getValor(); ambiente.put(id, ambiente.get(id)+passo.getValor())){
+//				for(int i = de.getValor(); i <= (ate.getValor()); i += passo.getValor()){
+//					faca.execute();
+//					
+//				}
+				for(ambiente.put(id, de.getValor()); ambiente.get(id) <= ate.getValor(); ambiente.put(id, (ambiente.get(id)+passo.getValor()) )){
+					//System.out.println(ambiente.get(id));
 					faca.execute();
 				}
 			}
 			else{
-				for(ambiente.put(id, de.getValor()); ambiente.get(id) > ate.getValor(); ambiente.put(id, ambiente.get(id)+passo.getValor())){
+				for(ambiente.put(id, de.getValor()); ambiente.get(id) >= ate.getValor(); ambiente.put(id, ambiente.get(id)+passo.getValor())){
 					faca.execute();
 				}
 			}
-			ambiente.remove(id);
+			//ambiente.remove(id);
 		}
 	}
 	

@@ -24,15 +24,14 @@ public class Principal {
 	}
 
 	public static void main(String... args) throws IOException {
-//		String programa = "x:=10; y:=leia ; c:= x + y; "
-//				+ "se 30 >= c entao escreva c senao exiba \"menor\"";
-		String programa = "x:=10; y:=leia; "
-				+ "se y = x entao exiba \"igual\" senaose y >= x entao exiba \"senaose maior\" senao exiba \"senao menor\"";
-//		String programa = "x:=10; "
-//				+ "escolha x caso 6 : exiba \"passou\" padrao exiba \"rodou\"";
-//		String programa = "para i de 1 ate 10 faca passo 2 { escreva i; }";
-//		String programa = "x:=10; y:=leia ; "
-//				+ "se x = y entao exiba \"igual\" senaose y<=x exiba \"maior\" senaose y<=20 exiba \"maior20\" senao exiba \"menor\";";
+//		String programa = "x:=10; y:=leia; "
+//				+ "se y = x entao exiba \"igual\" senaose y >= x entao exiba \"senaose maior\" senao exiba \"senao menor\"";
+//		String programa = "x:=leia; "
+//				+ "escolha x "
+//				+ "caso 6 : exiba \"passou\" "
+//				+ "caso 2: exiba \"final\" "
+//				+ "padrao exiba \"rodou\" ";
+		String programa = "para num de 1 ate 5 passo 1 faca { escreva coisa }";
 		
 		final ParseTree tree = parse(programa);
 		final ParseTreeWalker walker = new ParseTreeWalker();
