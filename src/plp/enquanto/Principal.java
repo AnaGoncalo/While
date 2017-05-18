@@ -24,14 +24,20 @@ public class Principal {
 	}
 
 	public static void main(String... args) throws IOException {
+		/* Programa para testar senaose */
 //		String programa = "x:=10; y:=leia; "
 //				+ "se y = x entao exiba \"igual\" senaose y >= x entao exiba \"senaose maior\" senao exiba \"senao menor\"";
+		
+		/* Programa para testar escolha */
 //		String programa = "x:=leia; "
 //				+ "escolha x "
 //				+ "caso 6 : exiba \"passou\" "
 //				+ "caso 2: exiba \"final\" "
 //				+ "padrao exiba \"rodou\" ";
-		String programa = "para num de 1 ate 5 passo 1 faca { escreva coisa }";
+		
+		/* Programa para testar para */
+		String programa = "para num de 1 ate 5 passo 1 faca { escreva num }";
+		
 		
 		final ParseTree tree = parse(programa);
 		final ParseTreeWalker walker = new ParseTreeWalker();
@@ -39,23 +45,5 @@ public class Principal {
 		walker.walk(listener, tree);
 		listener.getPrograma().execute();
 		
-//		Programa p1 = listener.getPrograma();
-//		// O parser devolve um objeto 'Programa' semelhante ao programa a seguir:
-//		Programa p2 = new Programa(asList(
-//				new Atribuicao("x", new Inteiro(10)),                       // x := 10
-//				new Atribuicao("y", leia),                                  // y := leia
-//				new Atribuicao("c", new ExpSoma(new Id("x"), new Id("y"))), // c := x + y
-//				new Se(new ExpMenorIgual(new Inteiro(30), new Id("c")),     // se 30 <= c entao
-//						new Escreva(new Id("c")),                           // escreva c
-//						new Exiba("menor"))                                 // senao exiba "menor"
-//				));
-////		Atribuicao x = new Atribuicao("x", new Inteiro(10));                       // x := 10
-////		Atribuicao y = new Atribuicao("y", leia);                                  // y := leia
-////		Se se = new Se(new ExpIgual(new Id("x"), new Id("y")),     			// se 30 <= c entao
-////				new Exiba("igual"), new Exiba("menor")) ;            // senao exiba "menor"
-////		se.AddSeNaoSe(new SeNaoSe(new ExpMaiorIgual(new Id("x"), new Id("y")) , new Exiba("maior")));
-////		Programa p2 = new Programa(asList(x, y, se) );
-//		p1.execute();
-//		p2.execute();
 	}
 }

@@ -142,7 +142,7 @@ public class MeuListener extends EnquantoBaseListener {
 	
 	@Override
 	public void exitPara(final EnquantoParser.ParaContext ctx) {
-		final String id = (String) getValue(ctx.ID());
+		final String id = (String) ctx.ID().getText();
 		final Expressao de = (Expressao) getValue(ctx.expressao().get(0));
 		final Expressao ate = (Expressao) getValue(ctx.expressao().get(1));
 		final Expressao passo = (Expressao) getValue(ctx.expressao().get(2));

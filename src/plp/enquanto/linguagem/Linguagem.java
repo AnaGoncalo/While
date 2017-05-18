@@ -151,15 +151,11 @@ public interface Linguagem {
 		@Override
 		public void execute() {
 			
-			//System.out.println(id);
+//			System.out.println(id);
 			
 			if(de.getValor() < ate.getValor()){
-//				for(int i = de.getValor(); i <= (ate.getValor()); i += passo.getValor()){
-//					faca.execute();
-//					
-//				}
 				for(ambiente.put(id, de.getValor()); ambiente.get(id) <= ate.getValor(); ambiente.put(id, (ambiente.get(id)+passo.getValor()) )){
-					//System.out.println(ambiente.get(id));
+//					System.out.println(ambiente.get(id));
 					faca.execute();
 				}
 			}
@@ -168,7 +164,7 @@ public interface Linguagem {
 					faca.execute();
 				}
 			}
-			//ambiente.remove(id);
+			ambiente.remove(id);
 		}
 	}
 	
